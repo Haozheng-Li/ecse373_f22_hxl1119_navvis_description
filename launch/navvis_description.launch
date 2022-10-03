@@ -17,8 +17,8 @@
     <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" />
 
     <!-- Run the joint_state_publisher. !-->
-    <node unless="$(arg use_gui)" pkg="joint_state_publisher" type="joint_state_publisher"
-        name="joint_state_publisher" />
+    <node if="$(arg use_gui)" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_state_publisher_gui" />
+    <node unless="$(arg use_gui)" pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" />
 
     <!-- static_transform_publisher and rostopic pub !-->
     <node unless="$(arg use_gui)" pkg="tf2_ros" type="static_transform_publisher" name="tf2_ros_wheel_left_joint" args=" 0.0 0.365 0.2 -1.57 0.0 0.0 base wheel_left_joint" />
