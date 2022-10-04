@@ -52,7 +52,7 @@
 
     <!-- Define the macro for the wheel link and joint !-->
     <xacro:macro name="xacro_name" params="side reflect">
-        <joint name="base_wheel_${side}_joint" type="fixed">
+        <joint name="base_wheel_${side}_joint" type="continuous">
             <parent link="base" />
             <child link="wheel_${side}" />
             <origin xyz="-0.10 ${reflect * 0.4} 0.0" rpy="-1.57079632679 0.0 0.0" />
